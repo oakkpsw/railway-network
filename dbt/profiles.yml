@@ -1,0 +1,20 @@
+networkrail:
+  target: dbt_patsawut_railway
+  outputs:
+    dbt_patsawut_railway:
+      type: bigquery
+      method: service-account
+      project: dataengineerbootcamp
+      dataset: dbt_patsawut_railway
+      threads: 10
+      keyfile: /Users/patsawut/Documents/data en bootcamp/personal project/railway-network/dags/dataengineerbootcamp-04543d3e14fc.json
+      location: asia-southeast1
+
+    prod:
+      type: bigquery
+      method: service-account
+      project: dataengineerbootcamp
+      dataset: networkrail
+      threads: 1
+      keyfile: /Users/patsawut/Documents/data en bootcamp/personal project/railway-network/dags/dataengineerbootcamp-04543d3e14fc.json
+      location: asia-southeast1
