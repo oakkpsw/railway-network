@@ -73,11 +73,14 @@ After data is updated in BigQuery, dbt is used to transform the data using analy
 - **Intermediate Layer**: This layer prepares staging models for joining the desired entities. The project includes one intermediate model: `int_networkrail__movements_joined_operating_companies`, which joins the `movements` and `operating_companies` tables for use in the mart          layer.
 
 - **Mart Layer**: This layer focuses on business entities and processes. The project includes one facts model (`fct_movements`) and five dimensions models: `highest_number_off_time_train_by_company`, `highest_number_on_time_train_by_company`, `hours_of_each_day_with_highest_number_of_late_trains`, `train_with_highest_number_on_off_route_records`, and `trains_that_have_never_been_late_or_off_route`.
+
 Airflow dbt-Dags 
 ![dbt-dag](./images/dbt_dag_airflow.png)
 
+
 This is completed Data Lineage that created from dbt
 ![Data Lineage](./images/dbt-dag.png)
+
 
 ### 4) Dashboard
 The project includes a simple dashboard to visualize the transformed data using dbt.
